@@ -1,0 +1,780 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+/******************************** Nav Barre ********************************/
+.hero{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    padding: 0 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+nav{
+    width: 100%;
+    height: 70px;
+    z-index: 999;
+}
+nav.transparent{
+    background-color: rgba(0, 0, 0, .5);
+}
+nav.opaque{
+    background-color: black;
+}
+nav .logo{
+    height: 60px;
+}
+ul.menu{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    gap: 20px;
+    border-bottom: solid 1px black;
+    width: 100%;
+    height: 100%;
+    list-style: none;
+}
+li.menu-item{
+    height: 100%;
+}
+li.menu-item > a{
+    line-height: 40px;
+}
+li.menu-item > a, li.submenu-item > a{
+    text-decoration: none;
+    color: #fff;
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 1em;
+}
+.opaque li.menu-item > a:hover{
+    box-shadow: 0 0 5px white inset;
+}
+.transparent li.menu-item > a:hover{
+    background-color: rgba(0, 0, 0, .5);
+}
+li.menu-item:first-child{
+    margin-left: 1em;
+    margin-right: auto;
+}
+li.menu-item:last-child{
+    margin-right: 20px;
+}
+li.menu-item > a:hover + ul.submenu, ul.submenu:hover{
+    opacity: 1;
+    transform: translateY(0);
+}
+ul.submenu{
+    border: solid 1px black;
+    border-top: none;
+    background-color: rgba(0, 0, 0, .5);
+    position: absolute;
+    top: 70px;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    transform: translateY(-100%);
+    z-index: 900;
+    transition: all 0.25s ease-out;
+}
+li.submenu-item a:hover{
+    background-color: rgba(0, 0, 0, .5);
+}
+/******************************** Acceuil ********************************/
+.home-content{
+   text-align: center; 
+   margin-block-start: 2.5rem;
+}
+.home-content h1{
+    font-size: 160px;
+    color: #fff;
+    font-weight: 600;
+}
+.home-content h1::first-letter{
+    color: #fec223;
+}
+.under-h1{
+    font-size: 25px;
+    color: #fff;
+}
+.under-h3{
+    margin-block-start: 1em;
+    color: #fec223;
+}
+.under-h3 sub{
+    position: relative;
+    bottom: -0.5rem;
+}
+.back-video{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+}
+.acceuil-social{
+    position: absolute;
+    bottom: 30px;
+    left: 40px;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.acceuil-social li{
+    list-style: none ;
+}
+.acceuil-social li a{
+    display: inline-block;
+    filter: invert(1);
+    margin-right: 20px;
+    transform: scale(0.5);
+    transition: 0.5s;
+}
+.acceuil-social li a:hover {
+    transform: scale(0.5) translateY(-15px);
+}
+.acceuil-social li a img {
+    width: 2.5rem;
+}
+/******************************** Parteunaires ********************************/
+div.partenaire-content, div.project-content{
+    /* height: calc(100vh - 70px); */
+    overflow: auto;
+    display: flex;
+    flex-flow: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    height: auto;
+    background-color: aliceblue;
+}
+div.partenaire-content > div.card{
+    margin: 1em;
+    height: 250px;
+    width: 300px;
+    background: rgba(0, 0, 0, .3);
+    border-radius: 20px 5px;
+    box-shadow: 1px 2px 5px;
+}
+div.partenaire-content div.card img{
+    height: 100%;
+    width: 100%;
+}
+/******************************** Project ********************************/
+div.project-content div.card{
+    height: 350px;
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 1px 2px 5px;
+    overflow: hidden;
+    margin: 1em;
+    transition: box-shadow 0.25s ease-in-out;
+}
+div.project-content div.card:hover{
+    box-shadow: 2px 2px 20px 5px;
+}
+div.project-content div.card img{
+    width: 100%;
+    margin-top: 15px;
+}
+div.project-content div.card:hover .image{
+    transform: translateY(-100%);
+    cursor: pointer;
+}
+div.project-content div.card h3{
+    text-align: center;
+    margin: 5px 0 10px;
+}
+div.project-content div.image{
+    background-color: #3c3c3c;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    z-index: 9;
+    transition: all 250ms ease-out;
+}
+div.project-content div.container{
+    position: relative;
+    height: 100%;
+    bottom: 100%;
+    padding: 5px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+/******************************** Competitions ********************************/
+div.competition-content div.slide{
+    max-width: 1000px;
+    max-height: 600px;
+    height: 600px;
+    width: 1000px;
+    margin: calc((100vh - 670px) * 1 / 2) auto;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px 2px black;
+    position: relative;
+}
+div.competition-content div.button{
+    position: absolute;
+    left: 50%;
+    bottom: 1em;
+    transform: translateX(-50%);
+    z-index: 9;
+}
+div.competition-content div.button button{
+    width: 40px;
+    height: 35px;
+    border-radius: 8px;
+    border: solid 1px black;
+    cursor: pointer;
+    margin: 0 5px;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+div.competition-content div.button button:hover{
+    background-color: rgba(255,255,0,.8);
+    color: white;
+}
+div.competition-content div.slide div.item{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: bottom;
+    transition: all .25s ease-out;
+}
+div.competition-content div.slide div.item.zoom-in{
+    width: 200px !important;
+    height: 300px !important;
+    box-shadow: 1px 2px 15px white;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 20px;
+    z-index: 9;
+}
+div.item.active{
+    z-index: 8;
+}
+div.item.zoom-in.first{
+    right: 300px;
+}
+div.item.zoom-in.last{
+    right: 80px;
+}
+div.competition-content div.item.zoom-in div.content{
+    display: none;
+}
+div.competition-content div.content{
+    width: 300px;
+    height: 100%;
+    margin-left: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 1.5em;
+}
+div.competition-content div.content .name{
+    font-size: 2.5em;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-shadow: 0 0 4px black, 1px 1px 2px black;
+    color: #fcdf00f5;
+    opacity: 0;
+    animation: fadeOut 1s ease-in-out 1 forwards;
+}
+
+div.competition-content div.content .des{
+    font-size: 1.5em;
+    text-shadow: 0 0 10px black, 0 0 5px black, 1px 1px 2px black;
+    color: white;
+    opacity: 0;
+    animation: fadeOut 1s .5s ease-in-out 1 forwards;
+}
+div.competition-content div.content a{
+    text-decoration: none;
+    color: black;
+    background-color: rgba(255, 255, 0, .8);
+    border-radius: 50%;
+    border: solid 2px white;
+    width: 100px;
+    text-align: center;
+    padding: 8px 10px;
+    font-size: 0.8em;
+    font-weight: bold;
+    opacity: 0;
+    animation: fadeOut 1s .5s ease-in-out 1 forwards;
+}
+/******************************** Activite ********************************/
+div.activites-content{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 2em 1em;
+    gap: 50px;
+}
+
+div.activites-content > section{
+    padding: 12px 20px;
+    width: 50%;
+    font-size: 1em;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    background-color: #b5afa4;
+    font-style: normal;
+    font-weight: 500;
+    animation: appear linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+    position: relative;
+}
+div.activites-content > section h2{
+    text-align: center;
+    margin-bottom: 15px;
+}
+div.activites-content > section h4{
+    text-align: center;
+    margin-bottom: 10px;
+}
+div.activites-content > section p {
+    text-align: justify;
+    text-indent: 1.5em;
+}
+div.activites-content > section .sub-section{
+    margin-bottom: 1em;
+}
+div.activites-content > section .sub-section h3{
+    margin-bottom: 10px;
+}
+div.activites-content .section1 {
+    left: -20%;
+    transition-delay: 100ms;
+}
+
+div.activites-content .section2 {
+    left: -10%;
+    transition-delay: 200ms;
+}
+
+div.activites-content .section3 {
+    right: -10%;
+    transition-delay: 300ms;
+}
+
+div.activites-content .section4 {
+    right: -20%;
+    transition-delay: 400ms;
+}
+
+div.header-title{
+    background-color: #b5afa4;
+    width: 100%;
+    height: 15vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+    font-size: 1.5em;
+    color: azure;
+}
+div.header-title span{
+    color: #fbc324;
+}
+div.header-title sub {
+    position: relative;
+    bottom: 0.5rem;
+    font-size: 1rem;
+}
+/******************************** Footer ********************************/
+footer{
+    background-color: #181717;
+    color: white;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: auto;
+}
+footer div.footer-content{
+    width: 95%;
+    height: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 1.2em 0 .6em;
+}
+div.footer-content > div.logos{
+    flex: 0.25;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 1em;
+}
+div.footer-content div.logos img{
+    width: 6em;
+    height: auto;
+}
+div.footer-content div.abbr{
+    flex: 0.7;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    font-size: 1.5rem;
+    row-gap: 16px;
+}
+div.footer-content div.abbr span{
+    color: #fbc324;
+}
+div.footer-content div.contact {
+    flex: 1;
+    padding-left: 0.1rem;
+    margin-inline-start: 19px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.3em;
+}
+div.footer-content div.contact > h3{
+    font-size: 1.2em;
+    margin-top: -1em;
+    margin-left: -1em;
+}
+div.footer-content div.contact ul{
+    width: 100%;
+    list-style: none;
+    min-height: 68%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-inline-start: -1.14rem;
+    padding-block-start: 0.6rem;
+    row-gap: 0.5rem;
+}
+div.footer-content div.contact > ul > li{
+    color: white;
+    text-decoration: none;
+    font-size: 0.8em;
+    display: flex;
+    align-items: center;
+    gap: -12px;
+}
+div.footer-content div.contact > ul >li img{
+    width: 1.5em;
+    height: auto;
+    margin-right: 0.5em;
+    color: aliceblue;
+}
+
+div.footer-content div.contact > ul > li p:hover{
+    text-decoration: underline;
+}
+
+div.footer-content div.contact ul:last-child > li > a img{
+    margin-block-start: 0em;
+}
+div.footer-content div.reseaux{
+    flex: 0.4;
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.3em;
+}
+div.footer-content div.reseaux > h3{
+    font-size: 1.2em;
+    margin-top: -1em;
+}
+div.footer-content div.reseaux ul{
+    list-style: none;
+    height: 40%;
+    padding-block-start: 0.6em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-content: space-between;
+    row-gap: 0.5em;
+}
+
+div.footer-content div.reseaux > ul > li{
+    color: white;
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+}
+div.footer-content div.reseaux a {
+    color: white;
+    text-decoration: none;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+div.footer-content div.reseaux a:hover {
+    text-decoration: underline;
+}
+
+div.footer-content div.reseaux > ul > li img {
+    width: 1.5em;
+    height: auto;
+    margin-right: 0.5em;
+}
+div.footer-content div.reseaux li:hover img {
+    animation: heartBeat 0.8s;
+}
+/*============= bas du footer =============*/
+footer div.bas {
+    width: 95%;
+    height: 20%;
+    border-top: 1px solid rgb(238, 214, 163);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+footer div.bas .team {
+    flex: 0.5;
+    padding-left: 0em;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+footer div.bas .team p {
+    font-size: 0.85em;
+}
+
+footer div.bas .copyright {
+    flex: 0.5;
+    padding-left: 0em;
+    display: flex;
+    align-items: end;
+    justify-content: end;
+    font-size: 0.9em;
+}
+/******************************** Presentation ********************************/
+div.presentation-content{
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 1em;
+    background-color: #ccc5ba;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+div.presentation-content > div.articles{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 7em;
+}
+div.presentation-content > div.articles > article{
+    box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+}
+div.presentation-content > div.articles > article:last-child{
+    margin-top: 4em;
+    box-shadow: none;
+}
+div.presentation-content > div.articles > article h1{
+    text-align: center;
+    font-weight: 900;
+    font-size: 3vw;
+    padding: 0 0 5rem 0;
+}
+div.presentation-content > div.articles > article h1 sub{
+    position: relative;
+    bottom: -0.5em;
+}
+div.presentation-content > div.articles > article h2{
+    font-size: 2vw;
+    font-weight: bold;
+    text-align: left;
+    margin: 15px 0px 0px 15px;
+    color: rgb(0, 0, 0);
+}
+div.presentation-content > div.articles > article p {
+    font-size: 1.3rem;
+    padding: 0 1em .5em 0;
+    margin: 10px 0px 0px 15px;
+    color: rgb(0, 0, 0);
+    text-indent: 1.5em;
+    text-align: justify;
+}
+div.presentation-content > div.image-container {
+    width: 50%;
+    height: 900px;
+    background-image: url("/images/competition/Compétition_Demi_Final1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    background-position-x: 35%;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+/******************************** Mission ********************************/
+div.mission-content .header-wrapper{
+    background: #aaa9a8;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 80px 12%;
+}
+
+div.mission-content .Social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(0, 0, 0);
+    position: absolute;
+    left: -2%;
+    transform: rotate(270deg);
+    gap: 10px;
+}
+div.mission-content .Line {
+    height: 2px;
+    width: 50px;
+    background-color: rgba(225,225,0,.5);
+}
+div.mission-content .Social-icons{
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+div.mission-content .Social-icons i{
+    height: 40px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(0, 0, 0);
+    background: linear-gradient(to right,rgba(155, 146, 43, 0.678),rgba(186, 172, 18, 0.662),rgba(255, 234, 0, 0.781));
+    border-radius: 50%;
+    transition: .6s;
+}
+div.mission-content .Social-icons a{
+    color: rgba(158, 158, 30, 0.426);
+}
+
+div.mission-content .Social-icons i:hover{
+    cursor: pointer;
+    background-color: rgb(255, 0, 0);
+    color: #fff;
+}
+div.mission-content .header-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: flex-start;
+    height: 100%;
+}
+div.mission-content .header-content h1{
+    color: #ffbf00;
+    font-size: 4rem;
+    line-height: 5rem;
+    margin-bottom: 20px;
+}
+div.mission-content .header-content h1 span{
+    color: #ff6600;
+}
+div.mission-content .header-content h3{
+    color: #000000;
+    font-size: 25px;
+    font-family: 'prague', sans-serif;
+}
+/******************************** Chiffres et reussite ********************************/
+header.chiffre .banner, header.reussite .banner{
+    width: 100%;
+    height: 70vh;
+    background-size: cover;
+    background-position: 100%;
+    margin-block-start: 0px;
+}
+header.chiffre .banner{
+    background-image: url('/images/nos reussite/8\ Mars.JPG');
+}
+header.reussite .banner{
+    background-image: url('/images/competition/Compétition.JPG');
+}
+header.chiffre .banner-text, header.reussite .banner-text{
+    padding-top: 300px;    
+    text-align: center;  
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; 
+    color: rgb(247, 233, 37);
+    font-weight: bold;
+    font-size: 60px;
+}
+div.chiffre-content, div.reussite-content {
+    display: flex;
+    justify-self: center;
+    align-items: flex-start;
+    font-family: Verdana;
+    padding: 2em 1em;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    row-gap: 2em;
+    background-color: beige ;
+}
+
+div.chiffre-content .image-container, div.reussite-content .image-container { 
+    text-align: center;
+    font-size: large;
+    height: 100%;
+    width: 30%;
+    padding: 1em;
+} 
+
+div.chiffre-content img, div.reussite-content img{
+    max-width: 20%; 
+    height: auto; 
+} 
+/******************************** Les annimations ********************************/
+@keyframes fadeOut{
+    from{
+        opacity: 0;
+        filter: blur(33px);
+    }
+
+    to{
+        opacity: 1;
+        filter: blur(0);
+    }
+}
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+@keyframes heartBeat {
+    0% {
+        transform: scale(1);
+    }
+
+    14% {
+        transform: scale(1.3);
+    }
+
+    28% {
+        transform: scale(1);
+    }
+
+    42% {
+        transform: scale(1.3);
+    }
+
+    70% {
+        transform: scale(1);
+    }
+}
