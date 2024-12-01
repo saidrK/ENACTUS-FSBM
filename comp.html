@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enactus competition</title>
+    <link rel="icon" type="image/png" href="/images/logos/logo-enactus.png">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="opaque">
+        <ul class="menu">
+            <li class="menu-item"><img src="images/logos/main-logo.png" class="logo"></li>
+            <li class="menu-item"><a href="acceuil.html">Acceuil</a></li>
+            <li class="menu-item"><a href="#">Information</a>
+                <ul class="submenu">
+                    <li class="submenu-item"><a href="members.html">Membres</a></li>
+                    <li class="submenu-item"><a href="activites.html">Activités</a></li>
+                    <li class="submenu-item"><a href="presentation.html">Présentation</a></li>
+                    <li class="submenu-item"><a href="mission.html">Mission</a></li>
+                    <li class="submenu-item"><a href="partenaires.html">Notre partenaires</a></li>
+                </ul>
+            </li>
+            <li class="menu-item"><a href="#">Nos Chiffres</a>
+                <ul class="submenu">
+                    <li class="submenu-item"><a href="nos_chiffre.html">Enactus en chiffres</a></li>
+                    <li class="submenu-item"><a href="reussites.html">réussites</a></li>
+                </ul>
+            </li>
+            <li class="menu-item"><a href="projets.html">Nos Projet</a></li>
+            <li class="menu-item"><a>Compétitions</a></li>
+        </ul>
+    </nav>
+    <div class="competition-content">
+        <div class="slide">
+            <div class="item active" style="background-image: url(images/competition/Compétition\ Demi\ Final.JPG);">
+                <div class="content">
+                    <div class="name">Demi Finale</div>
+                    <div class="des">La fin d'une aventure, mais le début d'une autre. Nous aurions...</div>
+                    <a href="/activites.html" target="">Voirs Plus</a>
+                </div>
+            </div>
+            <div class="item" style="background-image: url(images/competition/Compétition\ Phase\ des\ Ligues.JPG);">
+                <div class="content">
+                    <div class="name">Phase Des Ligues</div>
+                    <div class="des">Le 29 juin 2024, en compétition à UIT Kenitra, Enactus FSBM</div>
+                    <a href="/activites.html" target="">Voirs Plus</a>
+                </div>
+            </div>
+            <div class="item zoom-in first" style="background-image: url(images/competition/Mars.jpg);">
+                <div class="content">
+                    <div class="name">8 Mars</div>
+                    <div class="des"> L'événement "L'innovation au féminin : Explorer la science...</div>
+                    <a href="/activites.html" target="">Voirs Plus</a>
+                </div>
+            </div>
+            <div class="item zoom-in last" style="background-image: url(images/competition/Hackathon.JPG);">
+                <div class="content">
+                    <div class="name">Hackathon</div>
+                    <div class="des">Du 15 au 17 décembre 2023, notre équipe a participé au Méga...</div>
+                    <a href="/activites.html" target="">Voirs Plus</a>
+                </div>
+            </div>
+            
+            <div class="button">
+                <button class="prev">&lt;</button>
+                <button class="next">&gt;</button>
+            </div>
+    
+        </div>
+    </div>
+    <footer>
+        <div class="footer-content">
+            <div class="logos">
+                <a href="#"><img src="images/logos/logo-enactus.png" alt="logo enactus"></a>
+                <a href="#"><img src="images/logos/logo-fsbm.png" alt="logo fsbm"></a>
+            </div>
+            <div class="abbr">
+                    <h2><span>En</span>trepreneuriat</h2>
+                    <h2><span>Act</span>ion</h2>
+                    <h2><span>Us</span></h2>
+            </div>
+            <div class="contact">
+                <h3>Contact</h3>
+                <ul>
+                    <li>
+                        <img src="images/contact/hadi2.svg" alt="E-mail">
+                        <p>enactus24.25fsbm@gmail.com</p>
+                    </li>
+                    <li>
+                        <img src="images/contact/hadi3.svg" alt="Téléphone">
+                        <p>Tél : Team leader +212 639 380 894</p>
+                    </li>
+                    <li>
+                        <img src="images/contact/location-svgrepo-com (1).svg" alt="Fax">
+                        <p>Enactus FSBM, Faculté des Sciences Ben M'Sick - Bd Commandant Driss Al Harti, Casablanca 20670 - Maroc</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="reseaux">
+                <h3>Réseaux sociaux</h3>
+                <ul>
+                    <li>
+                        <img src="images/social/instagram.svg" alt="instagram"><a
+                            href="https://www.instagram.com/3nac1us.fsbm?igsh=YWcyaGQyOGMzNzJo">instagram</a>
+                    </li>
+                    <li>
+                        <img src="images/social/linkedin.svg" alt="LinkedIn"><a
+                            href="https://www.linkedin.com/company/enactus-fsbmc/">LinkedIn</a>
+                    </li>
+                    <li>
+                        <img src="images/social/twitter.svg" alt="X"><a
+                            href="https://x.com/EnactusFSBM?t=kU3KXL5cCMuthb5kPITjjw&s=08 ">Twitter</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="bas">
+            <div class="team">
+                <h3>FROM FRACTURES TO MASTERPIECES</h3>
+                <p>Develop and design by WOLVES</p>
+            </div>
+            <div class="copyright">
+                <small>© . <span id="year">2024</span>, All rights reserved</small>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        let next = document.querySelector('.next')
+        let prev = document.querySelector('.prev')
+    
+        next.addEventListener('click', function(){
+            let item = document.querySelector('.item:not(.first):not(.last):not(.active)')
+            let active = document.querySelector('.active')
+            let first = document.querySelector('.first')
+            let last = document.querySelector('.last')
+            active.classList.add('zoom-in', 'first')
+            active.classList.remove('active')
+            item.classList.add('active')
+            
+            first.classList.replace('first', 'last')
+            last.classList.remove('zoom-in', 'last')
+        })
+    
+        prev.addEventListener('click', function(){
+            let item = document.querySelector('.item:not(.first):not(.last):not(.active)')
+            let active = document.querySelector('.active')
+            let first = document.querySelector('.first')
+            let last = document.querySelector('.last')
+            active.classList.remove('active')
+            first.classList.add('active')
+            first.classList.remove('zoom-in', 'first')
+            last.classList.replace('last', 'first')
+            item.classList.add('zoom-in', 'last')
+
+        })
+    </script>
+    
+</body>
+</html>
